@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+*{
+    margin: 0px;
+    padding:0px;
+    list-style: none;
+    font-size: 15px;
+}
+.menu{
+     position: absolute;
+     width:321px;
+     height: 400px;
+/*     background-color:red;*/
+	
+}
+.menu .head{
+    position: relative;
+	height: 45px;
+}
+.menu .head ul{
+	position: absolute;
+}
+
+.menu .head ul li{
+	float: left;
+	width: 105.2px;
+	height: 40px;
+	overflow: hidden;
+    line-height: 40px;
+	text-align: center;
+	background-color:#F2F2F2;
+	padding:;
+	border:1px solid #eee;
+}
+.mod-box{
+	position: 
+}
+.menu .head ul li a:link,.menu .head ul li a:visited{text-decoration:none;color:black }
+.menu .head ul li:hover{background-color: #FE4800;}
+.menu .head ul li a:hover{color: white}
+
+
+.menu .content ul li a:link,.menu .head ul li a:visited{text-decoration:none;color:black }
+.menu .content ul li div{
+	float: left;
+}
+.menu .content ul li .mod-box{
+	width: 14px;
+	height: 14px;
+	background-color: #FE4800;
+}
+.menu .content ul li .mod-box1{
+	width: 14px;
+	height: 14px;
+	background-color: #C8C7C7;
+}
+.menu .content ul li{
+	margin: 10px 10px 0px 0px;
+}
+.menu .content ul li div {
+	/*text-align: center;*/
+	color: white;
+	font-size: 13px;
+}
+.menu .content ul li span{
+	float: right;
+}
+.menu .content ul li a{color: #0DA4D3;}
+.menu .content ul li a:hover{color: black}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+//获取鼠标划过
+var  titles=document.getElementById('head').getElementsByTagName('li')
+var  divs=document.getElementById('content').getElementsByClassName('mod')
+//遍历titles下所有的li
+for(var i=0;i<titles.length;i++){
+	titles[i].id=i;
+	
+	titles[i].onmouseover=function(){
+	for(var j=0;j<titles.length;j++) {divs[j].style.display='none'}
+	
+	divs[this.id].style.display='block';
+	}
+}
+
+
+}
+
+
+</script>
+</head>
+<body>
+	<div class="menu" id="menu">
+         <div id="head" class="head">
+              <ul>
+                   <li><a href="#">最新文章</a> </li>
+                   <li><a href="#">随机文章</a> </li>
+                   <li><a href="#">回复最多</a> </li>
+              </ul>
+
+         </div>
+         
+         <div class="content" id="content">
+               <div class="mod" id="mod" style="display:block">
+                     <ul>
+                           <li><div class="mod-box">1</div><a href="#">终于等到你！2017年2月设计圈</a> <span>02/15</span></li>
+                           <li><div class="mod-box">2</div><a href="#">年年画年？不如绘麟社林</a> <span>02/15</span></li>
+                           <li><div class="mod-box">3</div><a href="#">从零开始设计APP！快速提升引</a> <span>02/15</span></li>
+                           <li><div class="mod-box1">4</div><a href="#">这个超简单的教程，帮你学会</a> <span>02/15</span></li>
+                           <li><div class="mod-box1">5</div><a href="#">他让人类能用电脑画图，完全创</a> <span>02/15</span></li>
+                           <li><div class="mod-box1">6</div><a href="#">与其找老板谈涨薪？还不如靠自</a><span>02/15</span> </li>
+                           <li><div class="mod-box1">7</div><a href="#">字体大礼包！19个风格可爱/优</a><span>02/14</span> </li>
+                           <li><div class="mod-box1">8</div><a href="#">没灵感？这里是最全的12个</a> <span>02/14</span></li>
+                           <li><div class="mod-box1">9</div><a href="#">人工智能时代，不想失业的设计</a><span>02/14</span> </li>
+                           <li><div class="mod-box1">10</div><a href="#">顶尖设计师推荐：自学传奇建筑</a><span>02/14</span> </li>
+                      </ul>
+               </div>
+               <div class="mod" id="mod" style="display:none">
+                     <ul>
+                           <li><div class="mod-box">1</div><a href="#">网页设计趋势：大视频网页头部的运用</a></li>
+                           <li><div class="mod-box">2</div><a href="#">35个免费超赞的复古怀旧字体（可用于</a></li>
+                           <li><div class="mod-box">3</div><a href="#">PS教程！手把手教你临摹一张绚丽的艺</a></li>
+                           <li><div class="mod-box1">4</div><a href="#">在线Validator神器！改掉坏习惯，来看</a></li>
+                           <li><div class="mod-box1">5</div><a href="#">没什么是原创的：把知识连起来就是创</a></li>
+                           <li><div class="mod-box1">6</div><a href="#">新书推荐！设计师要懂心理学2</a></li>
+                           <li><div class="mod-box1">7</div><a href="#">管理站点就像筹办聚会！我们应该如何</a></li>
+                           <li><div class="mod-box1">8</div><a href="#">每周荐站：5个彰显个性的网站</a></li>
+                           <li><div class="mod-box1">9</div><a href="#">流言终结者！为你解读苹果San </a></li>
+                           <li><div class="mod-box1">10</div><a href="#">AI高级教程！手把手教你绘制多彩酷炫</a></li>
+                      </ul>
+               </div>
+                <div class="mod" id="mod" style="display:none">
+                     <ul>
+                           <li><div class="mod-box">1</div><a href="#">网站推荐</a> <span>(400)</span></li>
+                           <li><div class="mod-box">2</div><a href="#">关于我们</a> <span>(251)</span></li>
+                           <li><div class="mod-box">3</div><a href="#">设计师</a> <span>(240)</span></li>
+                           <li><div class="mod-box1">4</div><a hr24="#">【030期】像素画入门基础报名处</a> <span>(224)</span></li>
+                           <li><div class="mod-box1">5</div><a href="#">【031期讲座】如何设计精美的产</a> <span>(222)</span></li>
+                           <li><div class="mod-box1">6</div><a href="#">友情链接</a><span>(194)</span> </li>
+                           <li><div class="mod-box1">7</div><a href="#">【034期】站酷网改版经验分享</a><span>(165)</span> </li>
+                           <li><div class="mod-box1">8</div><a href="#">【033期讲座】IPTV专题电视端的专</a> <span>(148)</span></li>
+                           <li><div class="mod-box1">9</div><a href="#">PS抠图神器：KnockOut 2.0汉化版</a><span>(107)</span> </li>
+                           <li><div class="mod-box1">10</div><a href="#">20款免费和创新的PSD网页设计模板</a><span>(60)</span> </li>
+                      </ul>
+               </div>
+
+
+         </div>
+
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+    #parents{
+    	position: relative;
+    	width: 400px;
+    	height: 230px;
+    	/*background-color:blue;*/
+    }
+    .chlid{
+    	position: absolute;
+    	width: 400px;
+    	/*height: 100px;*/
+    	/*background-color: yellow;*/
+    }
+	</style>
+	<script type="text/javascript">
+window.onload=function(){
+var cir1=document.getElementById('1');
+var cir2=document.getElementById('2');
+var cir3=document.getElementById('3');
+var cir4=document.getElementById('4');
+cir1.onmouseover=function (){
+	this.style.backgroundColor="#4372C1";
+	cir2.style.backgroundColor="white";
+	cir3.style.backgroundColor="white";
+	cir4.style.backgroundColor="white";
+}
+cir1.onmouseout=function (){
+	this.style.backgroundColor="white";
+}
+cir2.onmouseover=function(){
+	this.style.backgroundColor="#4372C1";
+	cir1.style.backgroundColor="white";
+	cir3.style.backgroundColor="white";
+	cir4.style.backgroundColor="white";
+}
+cir2.onmouseout=function (){
+	this.style.backgroundColor="white";
+}
+cir3.onmouseover=function(){
+	this.style.backgroundColor="#4372C1";
+	cir2.style.backgroundColor="white";
+	cir1.style.backgroundColor="white";
+	cir4.style.backgroundColor="white";
+}
+cir3.onmouseout=function (){
+	this.style.backgroundColor="white";
+}
+cir4.onmouseover=function(){
+	this.style.backgroundColor="#4372C1";
+	cir2.style.backgroundColor="white";
+	cir3.style.backgroundColor="white";
+	cir1.style.backgroundColor="white";
+}
+cir4.onmouseout=function (){
+	this.style.backgroundColor="white";
+}
+var abutton=document.getElementsByTagName('input');
+var ab1=abutton[0];
+var ab2=abutton[1];
+ab1.onmouseover=function(){
+	ab1.style.opacity='0.7'
+}
+ab1.onmouseout=function(){
+	ab1.style.opacity='0.2'
+}
+ab2.onmouseover=function(){
+	ab2.style.opacity='0.7'
+}
+ab2.onmouseout=function(){
+	ab2.style.opacity='0.2'
+}
+
+var num_=document.getElementsByTagName('img');
+var aparents=document.getElementById('parents')
+var cir=document.getElementById('cir').getElementsByTagName('div')
+var i=0;
+num_[3].style.display="none";
+num_[2].style.display="none";
+num_[1].style.display="none";
+num_[0].style.display="block";
+function auto(){
+	timer = setInterval(function(){
+		i++;
+		if (i==4) {i=0};
+		num_[3].style.display="none";
+        num_[2].style.display="none";
+        num_[1].style.display="none";
+        num_[0].style.display="none";
+		num_[i].style.display="block";
+        cir[0].style.backgroundColor="white";
+        cir[1].style.backgroundColor="white";
+        cir[2].style.backgroundColor="white";
+        cir[3].style.backgroundColor="white";
+        cir[i].style.backgroundColor="#4372C1";
+	},1000)
+}
+auto();
+aparents.onmouseover=function(){
+	clearInterval(timer);
+
+}
+aparents.onmouseout=function go(){
+	auto();
+}
+
+
+
+
+//箭头点击
+var left=document.getElementById('left');
+var right=document.getElementById('right');
+left.onclick=function(){
+	i--;
+	if (i==-1) {i=3};
+	    num_[3].style.display="none";
+        num_[2].style.display="none";
+        num_[1].style.display="none";
+        num_[0].style.display="none";
+		num_[i].style.display="block";
+        cir[0].style.backgroundColor="white";
+        cir[1].style.backgroundColor="white";
+        cir[2].style.backgroundColor="white";
+        cir[3].style.backgroundColor="white";
+        cir[i].style.backgroundColor="#4372C1";
+
+}
+right.onclick=function(){
+	    i++;
+		if (i==4) {i=0};
+		num_[3].style.display="none";
+        num_[2].style.display="none";
+        num_[1].style.display="none";
+        num_[0].style.display="none";
+		num_[i].style.display="block";
+        cir[0].style.backgroundColor="white";
+        cir[1].style.backgroundColor="white";
+        cir[2].style.backgroundColor="white";
+        cir[3].style.backgroundColor="white";
+        cir[i].style.backgroundColor="#4372C1";
+}
+
+//鼠标点击到cir发生的事件	
+cir1.onclick=function(){
+	    num_[3].style.display="none";
+        num_[2].style.display="none";
+        num_[1].style.display="none";
+        num_[0].style.display="none";
+	    num_[0].style.display="block";
+	    i=0;
+}
+cir2.onclick=function(){
+	    num_[3].style.display="none";
+        num_[2].style.display="none";
+        num_[1].style.display="none";
+        num_[0].style.display="none";
+	    num_[1].style.display="block";
+	    i=1;
+}
+cir3.onclick=function(){
+	    num_[3].style.display="none";
+        num_[2].style.display="none";
+        num_[1].style.display="none";
+        num_[0].style.display="none";
+	    num_[2].style.display="block";
+	    i=2;
+}
+cir4.onclick=function(){
+	    num_[3].style.display="none";
+        num_[2].style.display="none";
+        num_[1].style.display="none";
+        num_[0].style.display="none";
+	    num_[3].style.display="block";
+	    i=3;
+}
+}
+</script>
+</head>
+<body>
+	<div id="box" style="position:absolute;width:400px;height:225px;background-color:red;">
+     <div id="parents">    
+      <div class="chlid"><img src="t01873c89fe0d3cbce6.jpg" width="400px;"></div>
+      <div class="chlid"><img src="t01822019c92da05e5a.jpg" width="400px;"></div>
+      <div class="chlid"><img src="t0114716369655b488a.jpg" width="400px;"></div>
+      <div class="chlid"><img src="t013d118ac93ee2bf7f.jpg" width="400px;"></div>
+       <div id="left" style="position:absolute;left:0px;top:100px;"><input type="button" name="" value="&lt;" style="border-radius:15px;width:25px;height:25px;opacity:0.2"></div>
+     <div id="right" style="position:absolute;right:5px;top:100px;width:20px;height:20px;"><input type="button" name="" value="&gt;" style="border-radius:15px;width:25px;height:25px;opacity:0.2"></div>
+          <div id="cir">
+             <div id="1" style="position:absolute;bottom:5px;left: 140px;border-radius:10px;width:15px;height:15px;background-color:white;opacity:0.5"></div>
+             <div id="2" style="position:absolute;bottom:5px;left: 180px;border-radius:10px;width:15px;height:15px;background-color:white;opacity:0.5"></div>
+              <div id="3" style="position:absolute;bottom:5px;left: 220px;border-radius:10px;width:15px;height:15px;background-color:white;opacity:0.5"></div>
+              <div id="4" style="position:absolute;bottom:5px;left: 260px;border-radius:10px;width:15px;height:15px;background-color:white;opacity:0.5"></div>
+         </div>
+     
+     </div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>biaodanyanzheng</title>
+	<style type="text/css">
+         input{
+         	position: absolute;
+         	left: 80px;
+         	width: 200px;
+         	height: 20px
+
+                   }
+         label{
+         	font-size:medium;
+         	font-family: '楷体'
+
+         }
+         input[type=submit]{
+            background-color: #9DC45F;
+            border-radius: 5px;
+            border: none;
+            padding: 10px 25px 10px 25px;
+            color: #FFF;
+            text-shadow: 1px 1px 1px #949494;
+            height: 40px;
+         }
+         #zc{
+         	width: 300px;
+         	height: 220px;
+         	border:2px solid #9DC45F;
+         }
+         #head{
+         	text-align: center;
+         	width: 300px;
+         	height: 40px;
+         	background-color: #9DC45F;
+         	font-size: large;
+
+         }
+         #la{
+            position: relative;
+            top: 8px;
+            color: white;  
+         }
+	</style>
+	<script type="text/javascript">
+window.onload =function(){
+var  ainput=document.getElementsByTagName('input');
+var  put1=ainput[0];
+var  put2=ainput[1];
+var  put3=ainput[2];
+var  ap=document.getElementsByTagName('p')
+var  p1=ap[0];
+var  p2=ap[1];
+var  p3=ap[2];
+
+put1.onfocus = function(){
+	  p1.innerHTML="请输入用户名";
+	  p1.style.fontSize= "10px";
+      p1.style.color=" #9DC45F";
+      p1.style.position=" relative";
+      p1.style.left="70px";
+      p2.innerHTML="";
+      p3.innerHTML="";
+	}
+put1.onblur=function(){
+	var reg=/[^\A-Z\a-z\u4E00-\u9FA5]/g;
+	if(reg.test(this.value)){
+       p1.innerHTML="必须为大小写字母或中文汉字";
+       p1.style.fontSize= "10px";
+       p1.style.color="red";
+       p1.style.position=" relative";
+       p1.style.left="70px";
+       put1.style.border="1px solid red";
+	}
+	else if(this.value.replace(/[^\x00-\xff]/g,"**").length<4||this.value.replace(/[^\x00-\xff]/g,"**").length>16){
+		p1.innerHTML="字符数应为4~16位"
+		p1.style.fontSize= "10px";
+        p1.style.color="red";
+        p1.style.position=" relative";
+        p1.style.left="70px";
+        put1.style.border="1px solid red";
+	}
+	else{
+		p1.innerHTML="正确";
+		p1.style.fontSize= "10px";
+        p1.style.color=" #9DC45F";
+        p1.style.position=" relative";
+        p1.style.left="70px";
+        put1.style.border="1px solid #9DC45F";
+	}
+	
+}
+put2.onfocus=function(){
+	p1.innerHTML="";
+	p3.innerHTML="";
+	p2.innerHTML="请输入密码";
+	p2.style.fontSize= "10px";
+    p2.style.color=" #9DC45F";
+    p2.style.position=" relative";
+    p2.style.left="70px";
+}
+put2.onblur=function(){
+	var reg1=/[^\A-Za-z0-9]/g;
+	if (reg1.test(this.value)) {
+	p2.innerHTML="必须为大小写字母和或数字";
+	p2.style.color="red";
+	put2.style.border="1px solid red";
+	}
+	if (this.value.length<4||this.value.length>16) {
+    p2.innerHTML="字符数应为4~16位";
+    p2.style.color="red";
+    put2.style.border="1px solid red"
+	}
+	else{
+		p2.innerHTML="正确"
+		p2.style.color="#9DC45F"
+		put2.style.border="1px solid #9DC45F"
+	}
+}
+put3.onfocus=function(){
+	p1.innerHTML="";
+	p2.innerHTML="";
+	p3.innerHTML="请确认密码"
+	p3.style.fontSize= "10px";
+    p3.style.color=" #9DC45F";
+    p3.style.position=" relative";
+    p3.style.left="70px";
+}
+put3.onblur=function(){
+
+	if (this.value!=put2.value) {
+		p3.innerHTML="密码不一致";
+		p3.style.color="red"
+		put3.style.border="1px solid red";
+	}
+	else if (this.value=="") {
+		p3.innerHTML="请确认密码";
+		p3.style.color="red"
+		put3.style.border="1px solid red";
+	}
+	else{
+		p3.innerHTML="正确";
+		put3.style.border="1px solid #9DC45F";
+	}
+	
+}
+
+function lala(){
+	if (ainput[0].style.border=="1px solid #9DC45F"&&
+		ainput[1].style.border=="1px solid #9DC45F"&&
+		ainput[2].style.border=="1px solid #9DC45F"
+		) 
+		{alert("提交成功")}
+	else{alert("提交失败")}
+}
+	
+}
+</script>
+</head>
+<body>
+<div id="zc">
+<div id="head"><div id="la"> 注册表</div></div>
+<div style="height:10px;"></div>
+<label for="用户名">用户名</label>  <input type="text" value=""><p></p>
+    <label for="密码">密码</label> <input type="password" value=""><p></p>
+    <label for="确认密码">确认密码</label><input type="password" value=""><p></p>
+    <input type="submit" name="立即注册" onclick="function lala()">  
+</div>
+</body>
+</html>
